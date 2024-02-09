@@ -1,0 +1,7 @@
+<svg version="1.1" id="mco" name="monaco" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 480 320" enable-background="new 0 0 480 320" xml:space="preserve">
+<g id="flag-mco">
+	<path fill="#D71F35" d="M0,160c160,44.8,320-44.8,480,0c0-46.7,0-93.4,0-140C320-24.8,160,64.8,0,20C0,66.7,0,113.4,0,160z"/>
+	<path fill="#FFFFFF" d="M0,300c160,44.8,320-44.8,480,0c0-46.7,0-93.3,0-140c-160-44.8-320,44.8-480,0C0,206.7,0,253.4,0,300z"/>
+</g>
+</svg>

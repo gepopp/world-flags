@@ -1,0 +1,8 @@
+<svg version="1.1" id="cze" name="czech republic" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 480 320" enable-background="new 0 0 480 320" xml:space="preserve">
+<g id="flag-cze">
+	<path fill="#C3212B" d="M0,300c160,44.8,320-44.8,480,0c0-93.3,0-186.7,0-280C320-24.8,160,64.8,0,20C0,113.3,0,206.7,0,300z"/>
+	<path fill="#FFFFFF" d="M0,160c160,44.8,320-44.8,480,0c0-46.7,0-93.3,0-140C320-24.8,160,64.8,0,20C0,66.7,0,113.3,0,160z"/>
+	<path fill="#28477E" d="M0,20c0,93.3,0,186.7,0,280c70-27.1,140-79.9,210-135.9C140,126.8,70,86.3,0,20z"/>
+</g>
+</svg>

@@ -1,0 +1,8 @@
+<svg version="1.1" id="jpn" name="japan" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 480 320" enable-background="new 0 0 480 320" xml:space="preserve">
+<g id="flag-jpn">
+	<path fill="#FFFFFF" d="M0,300c160,44.8,320-44.8,480,0c0-93.3,0-186.6,0-280C320-24.8,160,64.8,0,20C0,113.3,0,206.7,0,300z"/>
+	<path fill="#AC1F24" d="M240,76c46.4-6.8,84,27.1,84,73.7c0,46.2-37.6,87.6-84,94.4c-46.4,6.8-84-27.2-84-73.8
+		C156,124.1,193.6,82.9,240,76"/>
+</g>
+</svg>
