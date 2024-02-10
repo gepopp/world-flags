@@ -14,28 +14,41 @@ class CountriesTable extends Component
 
     public string $search = '';
 
+
+    public int $iconsCount = 0;
+
     public function mount()
     {
         $countries = json_decode( file_get_contents( public_path( 'countries.json' ) ), true );
-        foreach ( $countries as $country ) {
-            $code = Str::lower( $country['let3'] );
-            if ( file_exists( public_path( 'base-flag-icons/' . $code . '.svg' ) ) ) {
-                $country['flat'] = [
-                    'url'  => asset( "base-flag-icons/$code.svg" ),
-                    'code' => file_get_contents( public_path( "base-flag-icons/$code.svg" ) ),
-                ];
-            }
 
-            if ( file_exists( public_path( 'flag-icons/' . $code . '.svg' ) ) ) {
-                $country['swing'] = [
-                    'url'  => asset( "flag-icons/$code.svg" ),
-                    'code' => file_get_contents( public_path( "flag-icons/$code.svg" ) ),
-                ];
-            }
+        $dirs = glob( public_path( 'icons/*' ), GLOB_ONLYDIR );
 
-            $this->countries[]         = $country;
-            $this->filteredCountries[] = $country;
+        foreach ( $dirs as $dir ) {
+            $dir = Str::afterLast( $dir,  '/' );
+
+            foreach ( $countries as $index => $country ) {
+
+                $code = Str::lower( $country['let3'] );
+
+                if ( file_exists( public_path( "icons/$dir/$code.svg" ) ) ) {
+                    $countries[$index]['icons'][ $dir ] = [
+                        'url'  => asset( "icons/$dir/$code.svg" ),
+                        'code' => $this->cleanSvgCode(public_path( "icons/$dir/$code.svg")),
+                    ];
+                    $this->iconsCount ++;
+                }
+            }
         }
+
+        $this->countries = $this->filteredCountries = $countries;
+    }
+
+    public function cleanSvgCode($path)
+    {
+        $contents = file_get_contents( $path );
+        $contents = preg_replace('/<!--(.*?)-->/s', '', $contents);
+        $contents = preg_replace('/<\?xml(.*?)>/s', '', $contents);
+        return $contents;
     }
 
 

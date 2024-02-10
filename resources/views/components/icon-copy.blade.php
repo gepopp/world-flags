@@ -20,10 +20,13 @@
                     <textarea x-ref="code" class="w-full text-xs">{!! trim($icon['code']) !!}</textarea>
                 </div>
                 <div class="mt-4 flex justify-between w-full">
-                    <div>
+                    <div class="flex space-x-2">
                         <button class="rounded-full border border-orange-500 text-orange-500 text-sm px-4 py-1 leading-none uppercase shadow-lg bg-white font-semibold" x-on:click="copy()">
                             <span >copy</span>
                         </button>
+                        <a href="{{ $icon['url'] }}" download class="block rounded-full border border-green-500 text-green-500 text-sm px-4 py-1 leading-none uppercase shadow-lg bg-white font-semibold" x-on:click="copy()">
+                            <span >download svg</span>
+                        </a>
                     </div>
                     <div>
                         <p class="px-4 text-green-400 flex items-center space-x-2" x-transition x-cloak x-show="copied">

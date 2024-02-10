@@ -1,5 +1,5 @@
 <div class="md:w-1/2 max-w-7xl mx-auto p-6 lg:p-8">
-    <h1 class="text-3xl font-bold">Countries</h1>
+    <h1 class="text-3xl font-bold">Available Flag Icons - {{ $iconsCount }}</h1>
     <div class="mt-4 rounded-lg shadow-lg border border-gray-300 bg-white p-4 overflow-y-auto">
         <div class="mb-2 pb-2 border-b border-slate-300">
             <x-text-input wire:model.live="search" class="w-full" type="search" placeholder="search country name"/>
@@ -33,12 +33,11 @@
                     <td class="table-cell p-2 text-left">{{ $country['let3'] }}</td>
                     <td class="table-cell p-2 text-left">{{ $country['tld'] }}</td>
                 </tr>
-                @if(isset($country['flat']))
-                    <x-icon-copy :icon="$country['flat']"/>
-                @endif
-                @if(isset($country['swing']))
-                    <x-icon-copy :icon="$country['swing']"/>
-                @endif
+
+                @foreach( $country['icons'] ?? [] as $name => $icon )
+                    <x-icon-copy :icon="$icon"/>
+                @endforeach
+
             @endforeach
             </tbody>
         </table>
