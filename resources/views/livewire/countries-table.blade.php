@@ -5,6 +5,9 @@
             class="w-full bg-orange-50 placeholder:text-orange-800 border-orange-300 focus:border-orange-500 focus:ring-orange-500 dark:focus:ring-orange-600 rounded-full shadow-sm'"
             type="search"
             placeholder="search country"/>
+        <div class="flex justify-end text-xs mt-1 mr-4 text-orange-300">
+            <p>{{ $iconsCount }} icons available</p>
+        </div>
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-3 text-orange-500">
         <div class="p-2 text-left whitespace-nowrap font-semibold border-b-2 border-slate-300">

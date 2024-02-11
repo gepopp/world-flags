@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>World Icons</title>
+    <meta name="description" content="Free SVG flag icons of all countries of the world in 4 versions, rectangle 3:2, square, circle and swing, usable under the MIT license, quick copy svg code and download svg and ai files.">
+    <meta name="keywords" content="flag icons, icons, svg icons">
+    <meta name="author" content="Gerhard Popp">
+
+    <meta property="og:title" content='Flag Icons - free, easy to copy SVG flag icons'/>
+    <meta property="og:image" content="{{ asset('screenshot.png') }}"/>
+    <meta property="og:description" content="Free SVG flag icons of all countries of the world in 4 versions, rectangle 3:2, square, circle and swing, usable under the MIT license, quick copy svg code and download svg and ai files."/>
+    <meta property="og:url" content="https://flag-icons.com"/>
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3TTTMFZG8L"></script>
     <script>
