@@ -1,4 +1,4 @@
-<div x-data="countriesTable" class="p-14 overflow-y-auto">
+<div x-data="countriesTable" class="p-4 md:p-14 pt-14 overflow-y-auto">
     <div class="mb-2 pb-10">
         <input
             x-model="searchTerm"
@@ -6,7 +6,7 @@
             type="search"
             placeholder="search country"/>
     </div>
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 text-orange-500">
+    <div class="grid grid-cols-2 sm:grid-cols-3 text-orange-500">
         <div class="p-2 text-left whitespace-nowrap font-semibold border-b-2 border-slate-300">
             {{ __('Country') }}
         </div>
@@ -16,16 +16,12 @@
         <div class="p-2 text-left whitespace-nowrap font-semibold border-b-2 border-slate-300">
             {{ __('ALPHA 3') }}
         </div>
-        <div class="hidden lg:block p-2 text-left whitespace-nowrap font-semibold border-b-2 border-slate-300">
-            {{ __('TLD') }}
-        </div>
         <template x-for="country in filteredCountries" :key="country.let3">
             <div class="col-span-4  grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 mt-4">
                 <div class="p-2 text-left border-b-2 border-slate-300 font-bold uppercase" x-text="country.name"></div>
                 <div class="hidden sm:block p-2 text-left border-b-2 border-slate-300" x-text="country.let2"></div>
                 <div class="p-2 text-left border-b-2 border-slate-300" x-text="country.let3"></div>
-                <div class="hidden lg:block p-2 text-left border-b-2 border-slate-300" x-text="country.tld"></div>
-                <div class="col-span-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-4 border border-slate-300">
+                <div class="col-span-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-6 gap-4 border border-slate-300">
                     <template x-for="icon in country.iconArray" :key="country.let3 + icon.url">
                         <div class="flex flex-col items-center aspect-square p-2 m-2 shadow-lg border border-slate-300 rounded-lg">
                             <div class="w-full aspect-square flex items-center w-full rounded overflow-hidden">

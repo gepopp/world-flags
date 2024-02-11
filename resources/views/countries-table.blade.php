@@ -31,28 +31,57 @@
 </script>
 <div x-data="{
             showLeft: true,
+            showRight: true,
             showLeftSidebar(){
-            console.log(window.innerWidth);
                 if( window.innerWidth < 768 ){
                     this.showLeft = false;
                 }else{
                     this.showLeft = true;
+                }
+            },
+            showRightSidebar(){
+                if( window.innerWidth < 1024 ){
+                    this.showRight = false;
+                }else{
+                    this.showRight = true;
                 }
             }
         }"
 
      x-init="
         showLeftSidebar();
+        showRightSidebar();
 
         window.addEventListener('resize', () => {
               showLeftSidebar();
+              showRightSidebar();
+        });
+
+        $watch('showLeft', (value) => {
+            if( window.innerWidth < 768 && value){
+                showRight = false;
+            }
+        })
+
+        $watch('showRight', (value) => {
+            if( window.innerWidth < 768 && value){
+                showLeft = false;
+            }
         })
 
      "
      class="flex min-h-screen bg-orange-50/10 relative">
-    <p class="font-semibold text-xs uppercase cursor-pointer absolute top-5 left-10 text-orange-500 z-50" x-on:click="showLeft = !showLeft">
-        toggle sidebar</p>
-    <div class="hidden md:block w-[250px]"></div>
+    <div class="font-semibold text-xs uppercase cursor-pointer absolute top-5 left-4 md:left-10 text-orange-500 z-50" x-on:click="showLeft = !showLeft">
+        <p class="hidden md:block">toggle sidebar</p>
+        <p class="md:hidden">about flag-icons</p>
+    </div>
+    <div class="font-semibold text-xs uppercase cursor-pointer absolute top-5 right-4 md:right-10 text-orange-500 z-50" x-on:click="showRight = !showRight">
+        <p class="hidden md:block">toggle sidebar</p>
+        <p class="md:hidden">more info</p>
+    </div>
+
+
+    <div x-show="showLeft" class="hidden md:block w-[250px]"></div>
     <aside
         x-cloak
         x-show="showLeft"
@@ -62,7 +91,7 @@
         x-transition:leave="transition ease-in duration-500"
         x-transition:leave-start="translate-x-0"
         x-transition:leave-end="-translate-x-full"
-        class="bg-white fixed top-0 left-0 min-h-screen flex flex-col w-[250px] border-r border-orange-500 p-10 text-sm text-orange-900 leading-tight z-40 shadow-lg">
+        class="bg-white fixed top-0 left-0 min-h-screen flex flex-col w-[250px] border-r border-orange-500 p-10 text-sm text-orange-900 leading-tight z-40 overflow-y-auto shadow-lg">
 
         <div>
             <img src="{{ asset('logo.svg') }}" class="h-16"/>
@@ -94,17 +123,24 @@
         <livewire:countries-table/>
     </div>
 
-    <div class="hidden xl:block">
-        <div class="w-[350px]"></div>
-        <aside class="fixed top-0 right-0 min-h-screen flex flex-col w-[350px] border-l border-orange-500 p-10 text-sm text-orange-900 leading-tight">
+    <div>
+        <div x-show="showRight" class="hidden lg:block w-[300px]"></div>
+        <aside x-cloak
+               x-show="showRight"
+               x-transition:enter="transition-all ease-out duration-500"
+               x-transition:enter-start="opacity-0 translate-x-full"
+               x-transition:enter-end="opacity-100 translate-x-0"
+               x-transition:leave="transition ease-in duration-500"
+               x-transition:leave-start="translate-x-0"
+               x-transition:leave-end="translate-x-full"
+               class="fixed top-0 right-0 h-screen overflow-y-auto flex flex-col w-[300px] border-l border-orange-500 p-10 text-sm text-orange-900 leading-tight bg-white z-40">
 
+            bla bla
         </aside>
     </div>
-
-
 </div>
 @if( config('app.debug') )
-    <div class="fixed bottom-0 right-0 bg-white/50">
+    <div class="fixed bottom-0 right-0 bg-white/50 z-[9999]">
         <p class="font-bold text-black text-5xl p-5 sm:hidden">xs</p>
         <p class="font-bold text-black text-5xl p-5 hidden sm:block md:hidden">sm</p>
         <p class="font-bold text-black text-5xl p-5 hidden md:block lg:hidden">md</p>
