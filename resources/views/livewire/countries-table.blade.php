@@ -9,18 +9,9 @@
             <p>{{ $iconsCount }} icons available</p>
         </div>
     </div>
-    <div class="grid grid-cols-2 sm:grid-cols-3 text-orange-500">
-        <div class="p-2 text-left whitespace-nowrap font-semibold border-b-2 border-slate-300">
-            {{ __('Country') }}
-        </div>
-        <div class="hidden sm:block p-2 text-left whitespace-nowrap font-semibold border-b-2 border-slate-300">
-            {{ __('ALPHA 2') }}
-        </div>
-        <div class="p-2 text-left whitespace-nowrap font-semibold border-b-2 border-slate-300">
-            {{ __('ALPHA 3') }}
-        </div>
+    <div class="text-orange-500">
         <template x-for="country in filteredCountries" :key="country.let3">
-            <div class="col-span-4  grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 mt-4">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 mt-4">
                 <div class="p-2 text-left border-b-2 border-slate-300 font-bold uppercase" x-text="country.name"></div>
                 <div class="hidden sm:block p-2 text-left border-b-2 border-slate-300" x-text="country.let2"></div>
                 <div class="p-2 text-left border-b-2 border-slate-300" x-text="country.let3"></div>
