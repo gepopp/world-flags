@@ -23,26 +23,11 @@
                 <div class="p-2 text-left border-b-2 border-slate-300" x-text="country.let3"></div>
                 <div class="col-span-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-6 gap-4 border border-slate-300">
                     <template x-for="icon in country.iconArray" :key="country.let3 + icon.url">
-                        <div class="flex flex-col items-center aspect-square p-2 m-2 shadow-lg border border-slate-300 rounded-lg">
+                        <div x-data="copyCode"
+                             x-on:click="copy(); $dispatch('iconinfo', { dir: icon.dir, country: icon.country })"
+                             class="flex flex-col items-center aspect-square p-2 m-2 shadow-lg border border-slate-300 hover:border-orange-500 transition-all duration-300 rounded-lg cursor-pointer">
                             <div class="w-full aspect-square flex items-center w-full rounded overflow-hidden">
                                 <img :src="icon.url" class="object-cover drop-shadow-xl w-full"/>
-                            </div>
-                            <div x-data="copyCode" class="w-full flex-1 py-2 mt-2 pt-2 border-t border-slate-300">
-                                <button
-                                    x-on:click="copy()"
-                                    x-show="!copied"
-                                    class="text-xs leading-none block w-full text-center rounded-full border border-orange-500 text-orange-500 text-sm px-4 py-2 leading-none uppercase shadow-lg bg-white font-semibold">
-                                    <span>copy</span>
-                                </button>
-                                <div x-cloak x-show="copied"
-                                     class="text-xs leading-relaxed w-full text-center border border-white px-4 py-1 uppercase text-green-600">
-                                    copied!
-                                </div>
-                                <div class="mt-2">
-                                    <a :href="icon.url" download class="text-xs leading-none block w-full text-center rounded-full text-indigo-700 border border-indigo-500 text-indogo-500 py-2 uppercase shadow-lg bg-white font-semibold" x-on:click="copy()">
-                                        <span>download</span>
-                                    </a>
-                                </div>
                                 <textarea x-ref="code" class="hidden" x-text="icon.code"></textarea>
                             </div>
                         </div>
@@ -57,11 +42,10 @@
 <script>
     Alpine.data('copyCode', (code) => {
         return {
-            copied: false,
             copy() {
                 clipboard.copy(this.$refs.code.value);
                 this.copied = true;
-                setTimeout(() => this.copied = false, 1500);
+                this.$dispatch('copied');
             }
         }
     });
