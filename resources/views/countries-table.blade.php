@@ -15,7 +15,7 @@
     <meta property="og:url" content="https://flag-icons.com"/>
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
-
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6198321086761612" crossorigin="anonymous"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3TTTMFZG8L"></script>
     <script>
