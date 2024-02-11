@@ -15,16 +15,27 @@ class CountriesTable extends Component
     public string $search = '';
 
 
+    public array $dirs = [];
+
+
+    public array $dir_filter = [];
+
     public int $iconsCount = 0;
 
     public function mount()
     {
         $countries = json_decode( file_get_contents( public_path( 'countries.json' ) ), true );
 
+        foreach ( $countries as $index => $country ) {
+            $countries[$index]['icons'] = [];
+        }
+
         $dirs = glob( public_path( 'icons/*' ), GLOB_ONLYDIR );
 
         foreach ( $dirs as $dir ) {
             $dir = Str::afterLast( $dir,  '/' );
+            $this->dir_filter[] = $dir;
+            $this->dirs[] = $dir;
 
             foreach ( $countries as $index => $country ) {
 
