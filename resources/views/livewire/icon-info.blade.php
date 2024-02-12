@@ -7,7 +7,7 @@
     </h2>
     <textarea @disabled(empty($country))
               class="disabled:bg-gray-300/10 disabled:cursor-not-allowed w-full border border-orange-500 rounded-l-xl text-xs" rows="11">{{ $iconCode }}</textarea>
-    <div class="mt-4 flex flex-col md:flex-row space-y-4 md:space-x-4">
+    <div class="mt-4 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
         <a href="{{ $svgUrl }}"
            download
             @class([
