@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'countries-table');
+Route::view( '/', 'countries-table' )->name('home');
+Route::resource( 'article', \App\Http\Controllers\ArticleController::class );
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

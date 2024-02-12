@@ -11,8 +11,19 @@
     </div>
     <div class="text-orange-500">
         <template x-for="country in filteredCountries" :key="country.let3">
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 mt-4">
-                <div class="p-2 text-left border-b-2 border-slate-300 font-bold uppercase" x-text="country.name"></div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 mt-4">
+                <template x-if="country.link == ''">
+                    <div class="p-2 text-left border-b-2 border-slate-300 font-bold uppercase" x-text="country.name"></div>
+                </template>
+                <template x-if="country.link !== ''">
+                    <div class="p-2 text-left border-b-2 border-slate-300">
+                        <a :href="country.link" class="font-bold uppercase underline" x-text="country.name"></a>
+                    </div>
+
+                </template>
+
+
+
                 <div class="hidden sm:block p-2 text-left border-b-2 border-slate-300" x-text="country.let2"></div>
                 <div class="p-2 text-left border-b-2 border-slate-300" x-text="country.let3"></div>
                 <div class="col-span-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-6 gap-4 border border-slate-300">

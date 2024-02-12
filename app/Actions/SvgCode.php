@@ -19,6 +19,11 @@ class SvgCode
         return file_exists( public_path( $path )) ? asset( $path ) : '';
     }
 
+    public static function pngUrl( $path ): string
+    {
+        $path = Str::replace('svg', 'png', $path);
+        return file_exists( public_path( $path )) ? asset( $path ) : '';
+    }
 
     public static function cleanSvgCode( $path ): string
     {

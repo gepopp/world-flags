@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Article;
 use Illuminate\Support\Str;
 use Livewire\Component;
 use App\Actions\SvgCode;
@@ -29,6 +30,7 @@ class CountriesTable extends Component
 
         foreach ( $countries as $index => $country ) {
             $countries[ $index ]['icons'] = [];
+            $countries[ $index ]['link'] = Article::where('country', Str::lower($country['let3']))->first()?->link ?? "" ;
         }
 
         $dirs = glob( public_path( 'icons/*' ), GLOB_ONLYDIR );

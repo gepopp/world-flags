@@ -2,3 +2,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.article-content h2, .article-content h1{
+    @apply text-orange-800 font-bold text-3xl mb-6 mt-3;
+}
+.article-content h3{
+    @apply text-orange-800 font-semibold text-2xl mb-6 mt-3;
+}
+.article-content p{
+    @apply px-2 py-4;
+}
+.article-content ul{
+    @apply list-inside list-disc ml-8;
+}
