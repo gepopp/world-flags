@@ -7,21 +7,29 @@
     </h2>
     <textarea @disabled(empty($country))
               class="disabled:bg-gray-300/10 disabled:cursor-not-allowed w-full border border-orange-500 rounded-l-xl text-xs" rows="11">{{ $iconCode }}</textarea>
-    <div class="mt-4 flex space-x-4">
-
+    <div class="mt-4 flex flex-col md:flex-row space-y-4 md:space-x-4">
         <a href="{{ $svgUrl }}"
            download
             @class([
-                 "px-4 py-2 rounded-full border border-orange-800 text-orange-800 font-semibold shadow-lg",
+                 "px-4 py-2 rounded-full border border-orange-800 text-orange-800 font-semibold shadow-lg text-center",
                  "invisible" => empty($svgUrl)
              ])>Download
             SVG</a>
         <a href="{{ $aiUrl }}"
            download
            @class([
-                "px-4 py-2 rounded-full border border-orange-800 text-orange-800 font-semibold shadow-lg",
+                "px-4 py-2 rounded-full border border-orange-800 text-orange-800 font-semibold shadow-lg text-center",
                 "invisible" => empty($aiUrl)
             ])>Download
             AI</a>
+        @if(!empty($pngUrl))
+            <a href="{{ $pngUrl }}"
+               download
+                @class([
+                     "px-4 py-2 rounded-full border border-orange-800 text-orange-800 font-semibold shadow-lg text-center",
+                     "invisible" => empty($pngUrl)
+                 ])>Download
+                PNG</a>
+        @endif
     </div>
 </div>

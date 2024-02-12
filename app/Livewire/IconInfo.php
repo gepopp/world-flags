@@ -21,12 +21,15 @@ class IconInfo extends Component
 
     public string $aiUrl = '';
 
+    public string $pngUrl = '';
+
     #[On( 'iconinfo' )]
     public function iconinfo( $dir, $country )
     {
         $svgPath =  "icons/$dir/$country.svg";
 
         $this->svgUrl   = SvgCode::fileUrl( $svgPath );
+        $this->pngUrl   = SvgCode::pngUrl( $svgPath );
         $this->aiUrl   = SvgCode::aiUrl( $svgPath );
         $this->dir      = Str::ucfirst( $dir );
         $this->country  = Countries::name( $country );
