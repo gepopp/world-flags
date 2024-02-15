@@ -112,7 +112,9 @@
         class="bg-white fixed top-0 left-0 min-h-screen flex flex-col w-[250px] border-r border-orange-500 p-10 text-sm text-orange-900 leading-tight z-40 overflow-y-auto shadow-lg">
 
         <div>
-            <img src="{{ asset('logo.svg') }}" class="h-16"/>
+            <a href="{{ route('home') }}">
+                <img src="{{ asset('logo.svg') }}" class="h-16"/>
+            </a>
         </div>
         <p>Free SVG flag icons from all (almost right now) countries. MIT-licensed, open source by
             <a href="https://www.linkedin.com/in/gerhard-popp-wien" target="_blank" class="font-semibold underline text-orange-500">Gerhard
