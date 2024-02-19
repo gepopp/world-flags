@@ -24,6 +24,8 @@ class ArticleResource extends Resource
     {
         return $form
             ->schema( [
+                Forms\Components\SpatieMediaLibraryFileUpload::make( 'image' )
+                                                             ->disk( 's3' ),
                 Forms\Components\Select::make( 'country' )
                                        ->options( function () {
                                            return Countries::codeAndName();
@@ -45,8 +47,6 @@ class ArticleResource extends Resource
     {
         return $table
             ->columns( [
-                Forms\Components\SpatieMediaLibraryFileUpload::make( 'image' )
-                                                             ->disk( 's3' ),
                 Tables\Columns\TextColumn::make( 'country' )
                                          ->searchable(),
                 Tables\Columns\TextColumn::make( 'title' )
