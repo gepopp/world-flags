@@ -8,7 +8,7 @@
                 <span>Back to all countries</span>
             </a>
             <div class="my-10">
-                <img class="object-cover w-full min-h-full" src="{{ $article->getFirstMediaUrl() }}" alt="{{ $article->title }}"/>
+                {{ $article->getFirstMedia() }}
             </div>
             <h1 class="text-orange-800 font-bold text-5xl">{{ $article->title }}</h1>
 
