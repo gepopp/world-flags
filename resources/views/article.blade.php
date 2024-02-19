@@ -7,10 +7,11 @@
                 </svg>
                 <span>Back to all countries</span>
             </a>
-            <h1 class="text-orange-800 font-bold text-5xl">{{ $article->title }}</h1>
             <div class="my-10">
                 <img class="object-cover w-full min-h-full" src="{{ $article->getFirstMediaUrl() }}" alt="{{ $article->title }}"/>
             </div>
+            <h1 class="text-orange-800 font-bold text-5xl">{{ $article->title }}</h1>
+
             <div class="article-content">
                 <div class="float-left w-48 aspect-square bg-orange-50 m-5 rounded-full">
                     <img src="{{ \App\Actions\SvgCode::fileUrl("icons/circle/$article->country.svg") }}"/>

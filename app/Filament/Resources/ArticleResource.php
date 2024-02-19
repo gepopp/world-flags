@@ -25,6 +25,7 @@ class ArticleResource extends Resource
         return $form
             ->schema( [
                 Forms\Components\SpatieMediaLibraryFileUpload::make( 'image' )
+                                                             ->responsiveImages()
                                                              ->disk( 's3' ),
                 Forms\Components\Select::make( 'country' )
                                        ->options( function () {
