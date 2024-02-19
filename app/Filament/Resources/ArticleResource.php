@@ -37,7 +37,7 @@ class ArticleResource extends Resource
                                           ->columnSpanFull(),
                 Forms\Components\RichEditor::make( 'content' )
                                            ->required()
-                                               ->columnSpanFull(),
+                                           ->columnSpanFull(),
             ] );
     }
 
@@ -45,6 +45,8 @@ class ArticleResource extends Resource
     {
         return $table
             ->columns( [
+                Forms\Components\SpatieMediaLibraryFileUpload::make( 'image' )
+                                                             ->disk( 's3' ),
                 Tables\Columns\TextColumn::make( 'country' )
                                          ->searchable(),
                 Tables\Columns\TextColumn::make( 'title' )

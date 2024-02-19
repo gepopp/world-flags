@@ -12,7 +12,7 @@
 
     @if(request()->routeIs('article.show'))
         <meta property="og:title" content="{{ $article->title }}"/>
-        <meta property="og:image" content="{{ \App\Actions\SvgCode::pngUrl("icons/base/$article->country.svg") }}"/>
+        <meta property="og:image" content="{{ $article->getFirstMediaUrl() }}"/>
         <meta property="og:description" content="{{ $article->excerpt }}"/>
         <meta property="og:url" content="{{ $article->link }}"/>
     @else
