@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 27.9.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="atg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
-<path fill="#0072C6" d="M0,195.3h500v108.5H0V195.3z"/>
-<polygon fill="#CE1126" points="0,499 250,499 0,165.7 "/>
-<polygon fill="#CE1126" points="250,499 499,499 499,167 "/>
-<polygon fill="none" points="62.9,249.5 82.8,276 417.2,276 437.1,249.5 "/>
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#0072C6;}
+	.st2{fill:#CE1126;}
+	.st3{fill:none;}
+	.st4{fill:#FCD116;}
+</style>
+<rect class="st0" width="499" height="499"/>
+<path class="st1" d="M0,195.3h500v108.5H0V195.3z"/>
+<polygon class="st2" points="0,499 250,499 0,165.7 "/>
+<polygon class="st2" points="250,499 499,499 499,167 "/>
+<polygon class="st3" points="62.9,249.5 82.8,276 417.2,276 437.1,249.5 "/>
 <polygon points="62.9,249.5 437.1,249.5 499,167 499,0 0,0 0,165.7 "/>
-<path fill="#FCD116" d="M250,249.5L87.3,195.3l82.9-15.9L99.7,133l82.7,17.1l-47.4-69.9l69.9,47.4l-17.1-82.7l46.4,70.5L250,32.5
+<path class="st4" d="M250,249.5L87.3,195.3l82.9-15.9L99.7,133l82.7,17.1l-47.4-69.9l69.9,47.4l-17.1-82.7l46.4,70.5L250,32.5
 	l15.9,82.9l46.4-70.5l-17.1,82.7l69.9-47.4l-47.4,69.9l82.7-17.1l-70.5,46.4l82.9,15.9L250,249.5z"/>
 </svg>
