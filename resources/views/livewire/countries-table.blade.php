@@ -9,7 +9,7 @@
             <p>{{ $iconsCount }} icons available</p>
         </div>
     </div>
-    <div class="text-orange-500">
+    <div class="text-orange-500" wire:ignore>
         <template x-for="country in filteredCountries" :key="country.let3">
             <div class="grid grid-cols-2 sm:grid-cols-3 mt-4">
                 <template x-if="country.link == ''">
