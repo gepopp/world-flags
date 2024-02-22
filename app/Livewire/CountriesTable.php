@@ -4,6 +4,8 @@ namespace App\Livewire;
 
 use App\Models\Article;
 use Illuminate\Support\Str;
+use Livewire\Attributes\Renderless;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 use App\Actions\SvgCode;
 
@@ -24,13 +26,26 @@ class CountriesTable extends Component
 
     public int $iconsCount = 0;
 
+
+    #[Url]
+    public array $selection = [];
+
+
+    #[Renderless]
+    public function select( $selection )
+    {
+        $this->selection = $selection;
+        $this->dispatch( 'iconinfo', dir:  $selection['dir'], country: $selection['country'] );
+    }
+
+
     public function mount()
     {
         $countries = json_decode( file_get_contents( public_path( 'countries.json' ) ), true );
 
         foreach ( $countries as $index => $country ) {
             $countries[ $index ]['icons'] = [];
-            $countries[ $index ]['link'] = Article::where('country', Str::lower($country['let3']))->first()?->link ?? "" ;
+            $countries[ $index ]['link']  = Article::where( 'country', Str::lower( $country['let3'] ) )->first()?->link ?? "";
         }
 
         $dirs = glob( public_path( 'icons/*' ), GLOB_ONLYDIR );
@@ -49,7 +64,7 @@ class CountriesTable extends Component
                         'dir'     => $dir,
                         'country' => $code,
                         'url'     => asset( "icons/$dir/$code.svg" ),
-                        'code' => SvgCode::cleanSvgCode(public_path( "icons/$dir/$code.svg" ))
+                        'code'    => SvgCode::cleanSvgCode( public_path( "icons/$dir/$code.svg" ) ),
                     ];
                     $this->iconsCount ++;
                 }
