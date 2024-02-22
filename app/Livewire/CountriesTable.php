@@ -31,13 +31,6 @@ class CountriesTable extends Component
     public array $selection = [];
 
 
-    #[Renderless]
-    public function select( $selection )
-    {
-        $this->selection = $selection;
-        $this->dispatch( 'iconinfo', dir:  $selection['dir'], country: $selection['country'] );
-    }
-
 
     public function mount()
     {

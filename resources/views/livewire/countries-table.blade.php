@@ -30,7 +30,8 @@
                         <div x-data="copyCode"
                              x-on:click="
                                 copy();
-                                $wire.select({ country: icon.country, dir: icon.dir })
+                                $dispatch('iconinfo', { country: icon.country, dir: icon.dir });
+                                $wire.set('selection', { country: icon.country, dir: icon.dir })
                                 "
                              class="flex flex-col items-center aspect-square p-2 m-2 shadow-lg border border-slate-300 hover:border-orange-500 transition-all duration-300 rounded-lg cursor-pointer">
                             <div class="w-full aspect-square flex items-center w-full rounded overflow-hidden">
