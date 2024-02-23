@@ -1,4 +1,9 @@
-<div class="mt-10" x-data x-on:iconinfo.window="console.log('iconinfo')">
+<div class="mt-10"
+     x-data="{ loading: @entangle() }"
+     x-on:iconinfo.window="loading = true"
+     x-on:iconinfoloaded.window="loading = false"
+     class="relative">
+    <div x-cloak x-show="loading" class="absolute inset-0 bg-white/50"></div>
     <h2 @class([
         "text-2xl font-bold",
         "text-orange-800/25" => empty($country),
@@ -17,10 +22,10 @@
             SVG</a>
         <a href="{{ $aiUrl }}"
            download
-           @class([
-                "px-4 py-2 rounded-full border border-orange-800 text-orange-800 font-semibold shadow-lg text-center",
-                "invisible" => empty($aiUrl)
-            ])>Download
+            @class([
+                 "px-4 py-2 rounded-full border border-orange-800 text-orange-800 font-semibold shadow-lg text-center",
+                 "invisible" => empty($aiUrl)
+             ])>Download
             AI</a>
         @if(!empty($pngUrl))
             <a href="{{ $pngUrl }}"
