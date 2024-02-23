@@ -1,4 +1,4 @@
-<div class="mt-10">
+<div class="mt-10" x-data x-on:iconinfo.window="console.log('iconinfo')">
     <h2 @class([
         "text-2xl font-bold",
         "text-orange-800/25" => empty($country),
