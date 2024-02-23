@@ -23,6 +23,7 @@ class IconInfo extends Component
 
     public string $pngUrl = '';
 
+
     #[On( 'iconinfo' )]
     public function iconinfo( $dir, $country )
     {

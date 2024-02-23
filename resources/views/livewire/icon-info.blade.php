@@ -1,5 +1,5 @@
 <div class="mt-10"
-     x-data="{ loading: @entangle() }"
+     x-data="{ loading:false }"
      x-on:iconinfo.window="loading = true"
      x-on:iconinfoloaded.window="loading = false"
      class="relative">
