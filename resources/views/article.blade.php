@@ -14,6 +14,7 @@
 
 
             <div x-data="{ icons : {{ $icons }} }"
+                 x-init="$dispatch('iconinfo', { country: '{{ $article->country }}', dir: 'base' });"
                 class="my-10 col-span-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-6 gap-4 border border-slate-300">
                 <template x-for="icon in icons" :key="icon.url">
                     <div x-data="copyCode"
