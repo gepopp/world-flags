@@ -48,15 +48,7 @@
 </div>
 @script
 <script>
-    Alpine.data('copyCode', (code) => {
-        return {
-            copy() {
-                clipboard.copy(this.$refs.code.value);
-                this.copied = true;
-                this.$dispatch('copied');
-            }
-        }
-    });
+
 
     Alpine.data('countriesTable', () => {
         return {
